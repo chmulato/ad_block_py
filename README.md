@@ -1,12 +1,17 @@
 # 🛡️ Bloqueador de Propagandas para Windows
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/chmulato/ad_block_py)](https://github.com/chmulato/ad_block_py/releases)
+[![GitHub stars](https://img.shields.io/github/stars/chmulato/ad_block_py)](https://github.com/chmulato/ad_block_py/stargazers)
+[![Windows](https://img.shields.io/badge/Platform-Windows-blue)](https://github.com/chmulato/ad_block_py)
+
 Bloqueia propagandas em **todos os navegadores** modificando o arquivo hosts do Windows. Funciona com Chrome, Firefox, Edge, Safari, Opera e qualquer outro navegador.
 
 ## ⚡ Uso Rápido (3 Passos)
 
 ### 🎯 Método 1: Executável (Recomendado)
 
-1. **Clique com botão direito** em `AdBlocker.exe`
+1. **Clique com botão direito** em [`AdBlocker.exe`](AdBlocker.exe)
 2. **Selecione** "Executar como administrador"
 3. **Digite** `1` e pressione Enter
 4. **Reinicie** seu navegador
@@ -15,7 +20,7 @@ Bloqueia propagandas em **todos os navegadores** modificando o arquivo hosts do 
 
 ### 🎯 Método 2: Instalação Automática
 
-Execute como Administrador: `install_complete.bat`
+Execute como Administrador: [`install_complete.bat`](install_complete.bat)
 
 - ✅ Gera o executável automaticamente
 - ✅ Instala no sistema
@@ -104,13 +109,38 @@ AdBlocker.exe unblock   # Desbloquear direto
 
 ### ❌ Site importante não carrega
 
-**Solução:** Execute `AdBlocker.exe` → Opção "2" (Desbloquear) → Teste o site
+**Solução:** Execute [`AdBlocker.exe`](AdBlocker.exe) → Opção "2" (Desbloquear) → Teste o site
 
 ## 📁 Arquivos Principais
 
-- **`AdBlocker.exe`** - Executável principal (12.58 MB, não precisa Python)
-- **`block.py`** - Código-fonte Python original
-- **`install_complete.bat`** - Instalador automático completo
+- **[`AdBlocker.exe`](AdBlocker.exe)** - Executável principal (12.58 MB, não precisa Python)
+- **[`block.py`](block.py)** - Código-fonte Python original
+- **[`install_complete.bat`](install_complete.bat)** - Instalador automático completo
+
+## 📂 Todos os Arquivos do Projeto
+
+### 🎯 Arquivos Executáveis
+- **[`AdBlocker.exe`](AdBlocker.exe)** - Executável independente (12.58 MB)
+- **[`block.py`](block.py)** - Script Python principal (11.6 KB)
+
+### ⚙️ Instaladores e Configuração
+- **[`install_complete.bat`](install_complete.bat)** - Instalador completo com geração de EXE
+- **[`install.bat`](install.bat)** - Instalador básico para script Python
+- **[`uninstall.bat`](uninstall.bat)** - Desinstalador completo
+- **[`run_adblock.bat`](run_adblock.bat)** - Executor do script Python
+
+### 🔨 Conversores para EXE
+- **[`build_exe_advanced.bat`](build_exe_advanced.bat)** - Conversor otimizado com compressão
+- **[`build_exe.bat`](build_exe.bat)** - Conversor básico e rápido
+- **[`build_exe.py`](build_exe.py)** - Script Python para conversão
+
+### 📋 Configuração e Documentação
+- **[`AdBlocker.spec`](AdBlocker.spec)** - Especificação PyInstaller
+- **[`version_info.txt`](version_info.txt)** - Informações de versão do executável
+- **[`requirements.txt`](requirements.txt)** - Dependências Python
+- **[`README.md`](README.md)** - Este arquivo de documentação
+- **[`CHANGELOG.md`](CHANGELOG.md)** - Histórico de versões
+- **[`LICENSE`](LICENSE)** - Licença MIT do projeto
 
 ## 🔧 Para Desenvolvedores
 
@@ -121,19 +151,28 @@ build_exe_advanced.bat    # Conversão otimizada
 build_exe.bat            # Conversão básica
 ```
 
+**Links dos arquivos:**
+- [`build_exe_advanced.bat`](build_exe_advanced.bat) - Conversor com otimizações avançadas
+- [`build_exe.bat`](build_exe.bat) - Conversor básico e rápido
+- [`build_exe.py`](build_exe.py) - Script Python para conversão
+
 ### Executar Script Python
 
 ```batch
 run_adblock.bat          # Requer Python instalado
 ```
 
+**Links dos arquivos:**
+- [`run_adblock.bat`](run_adblock.bat) - Executor do script Python
+- [`requirements.txt`](requirements.txt) - Dependências Python
+
 ## 🗑️ Desinstalação
 
-1. Execute `AdBlocker.exe` como Administrador
+1. Execute [`AdBlocker.exe`](AdBlocker.exe) como Administrador
 2. Escolha opção "2" (Desbloquear propagandas)
 3. Delete os arquivos do programa
 
-**Ou execute:** `uninstall.bat` como Administrador
+**Ou execute:** [`uninstall.bat`](uninstall.bat) como Administrador
 
 ## ⚠️ Importante
 
