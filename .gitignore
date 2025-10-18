@@ -48,3 +48,6 @@ hosts.backup
 # Temporary files
 *.tmp
 *.temp
+
+# Executables
+*.exe
