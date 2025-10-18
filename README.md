@@ -142,6 +142,29 @@ run_adblock.bat          # Requer Python instalado
 - **Backup automático** é criado em `hosts.backup`
 - **Antivírus** pode dar falso positivo (é normal)
 
+## 📄 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE) - veja o arquivo LICENSE para detalhes.
+
+**Isso significa que você pode:**
+- ✅ Usar comercialmente
+- ✅ Modificar o código
+- ✅ Distribuir
+- ✅ Usar de forma privada
+
+**Apenas mantenha:**
+- 📄 Copyright e notice da licença
+- ⚠️ Disclaimer de garantia
+
+## 🤝 Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para:
+
+- 🐛 Reportar bugs via [Issues](https://github.com/chmulato/ad_block_py/issues)
+- 💡 Sugerir melhorias
+- 🔧 Enviar Pull Requests
+- ⭐ Dar uma estrela no projeto
+
 ---
 
 **🎯 Resultado:** Navegação sem propagandas, mais rápida e segura! 🚀

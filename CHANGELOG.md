@@ -1,5 +1,13 @@
 # 📋 Notas de Versão - Bloqueador de Propagandas
 
+## v1.0.1 - 2025-10-18
+
+### 📄 Licença Open Source
+
+- **✨ Adicionada MIT License**: Projeto agora é oficialmente open source
+- **📖 README atualizado**: Seção de licença e contribuições adicionada
+- **🤝 Contribuições**: Instruções para colaboração da comunidade
+
 ## v1.0.0 - 2025-10-18
 
 ### 🎉 Release Inicial
