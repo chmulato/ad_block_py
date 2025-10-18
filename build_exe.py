@@ -17,34 +17,66 @@ def install_pyinstaller():
         return False
 
 def create_executable():
-    """Cria o arquivo executável"""
+    """Cria o arquivo executável com fallback para contornar erros de permissão"""
     print("🔨 Criando executável...")
     
-    # Comando PyInstaller com opções otimizadas
-    command = [
-        "pyinstaller",
-        "--onefile",                    # Um único arquivo
-        "--noconsole",                  # Sem console (interface gráfica)
-        "--name=AdBlocker",             # Nome do executável
-        "--icon=icon.ico",              # Ícone (se existir)
-        "--add-data=README.md;.",       # Incluir README
-        "--hidden-import=requests",     # Importações explícitas
-        "--clean",                      # Limpar cache
-        "block.py"
+    # Tentar pasta alternativa primeiro (sabemos que funciona)
+    dist_paths = ["dist_build", "output", "dist"]
+    
+    # Comando base PyInstaller
+    base_command = [
+        "pyinstaller", "--onefile", "--noconsole", "--name=AdBlocker",
+        "--add-data=README.md;.", "--hidden-import=requests", "--clean", "block.py"
     ]
     
-    try:
-        # Remove --icon se não existir arquivo de ícone
-        if not os.path.exists("icon.ico"):
-            command.remove("--icon=icon.ico")
+    # Adicionar ícone se existir
+    if os.path.exists("icon.ico"):
+        base_command.insert(-1, "--icon=icon.ico")
+    
+    for dist_path in dist_paths:
+        print(f"\n🎯 Tentando: {dist_path}")
+        
+        command = base_command.copy()
+        if dist_path != "dist":
+            command.insert(-1, f"--distpath={dist_path}")
+        
+        try:
+            os.makedirs(dist_path, exist_ok=True)
+            exe_path = os.path.join(dist_path, "AdBlocker.exe")
             
-        subprocess.check_call(command)
-        print("✅ Executável criado com sucesso!")
-        print("📁 Localização: dist/AdBlocker.exe")
-        return True
-    except subprocess.CalledProcessError as e:
-        print(f"❌ Erro ao criar executável: {e}")
-        return False
+            # Remover exe existente se possível
+            if os.path.exists(exe_path):
+                try:
+                    os.remove(exe_path)
+                except OSError:
+                    print(f"⚠️  Arquivo pode estar em uso, tentando mesmo assim...")
+            
+            # Executar PyInstaller (silencioso)
+            subprocess.check_call(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            
+            if os.path.exists(exe_path):
+                print("✅ Executável criado com sucesso!")
+                print(f"📁 Localização: {exe_path}")
+                
+                # Tentar copiar para dist se não for o padrão
+                if dist_path != "dist":
+                    try:
+                        os.makedirs("dist", exist_ok=True)
+                        import shutil
+                        shutil.copy2(exe_path, "dist/AdBlocker.exe")
+                        print(f"📋 Copiado para: dist/AdBlocker.exe")
+                    except Exception:
+                        print(f"💡 Use o executável em: {exe_path}")
+                
+                return True
+                
+        except subprocess.CalledProcessError:
+            continue  # Tentar próxima pasta
+        except Exception:
+            continue
+    
+    print("\n❌ Build falhou! Use: .\\build.ps1")
+    return False
 
 def main():
     print("🛡️  Conversor para Executável - Bloqueador de Propagandas")

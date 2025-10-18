@@ -120,21 +120,25 @@ AdBlocker.exe unblock   # Desbloquear direto
 ## 📂 Todos os Arquivos do Projeto
 
 ### 🎯 Arquivos Executáveis
+
 - **[`AdBlocker.exe`](AdBlocker.exe)** - Executável independente (12.58 MB)
 - **[`block.py`](block.py)** - Script Python principal (11.6 KB)
 
 ### ⚙️ Instaladores e Configuração
+
 - **[`install_complete.bat`](install_complete.bat)** - Instalador completo com geração de EXE
 - **[`install.bat`](install.bat)** - Instalador básico para script Python
 - **[`uninstall.bat`](uninstall.bat)** - Desinstalador completo
 - **[`run_adblock.bat`](run_adblock.bat)** - Executor do script Python
 
 ### 🔨 Conversores para EXE
+
 - **[`build_exe_advanced.bat`](build_exe_advanced.bat)** - Conversor otimizado com compressão
 - **[`build_exe.bat`](build_exe.bat)** - Conversor básico e rápido
 - **[`build_exe.py`](build_exe.py)** - Script Python para conversão
 
 ### 📋 Configuração e Documentação
+
 - **[`AdBlocker.spec`](AdBlocker.spec)** - Especificação PyInstaller
 - **[`version_info.txt`](version_info.txt)** - Informações de versão do executável
 - **[`requirements.txt`](requirements.txt)** - Dependências Python
@@ -144,17 +148,34 @@ AdBlocker.exe unblock   # Desbloquear direto
 
 ## 🔧 Para Desenvolvedores
 
-### Converter Python para EXE
+### 🔨 Gerar Executável (PermissionError Resolvido)
 
-```batch
-build_exe_advanced.bat    # Conversão otimizada
-build_exe.bat            # Conversão básica
+**Solução Otimizada - Contorna automaticamente erros de permissão:**
+
+```powershell
+.\build.ps1           # Recomendado - funciona sempre
+.\build.ps1 -Admin    # Com privilégios de administrador  
+.\build.ps1 -Verbose  # Com logs detalhados
 ```
 
+**Alternativas:**
+
+```batch
+python build_exe.py           # Python com fallbacks
+build_exe_advanced.bat        # Conversor legado otimizado
+```
+
+**Resultado:**
+
+- ✅ **Executável**: `dist\AdBlocker.exe` ou `dist_build\AdBlocker.exe`
+- 📊 **Tamanho**: ~12MB
+- 🚀 **Status**: Testado e funcional no Windows 11
+
 **Links dos arquivos:**
-- [`build_exe_advanced.bat`](build_exe_advanced.bat) - Conversor com otimizações avançadas
-- [`build_exe.bat`](build_exe.bat) - Conversor básico e rápido
-- [`build_exe.py`](build_exe.py) - Script Python para conversão
+
+- [`build.ps1`](build.ps1) - ⭐ Script principal otimizado (resolve PermissionError)
+- [`build_exe.py`](build_exe.py) - Alternativa Python com fallbacks
+- [`build_exe_advanced.bat`](build_exe_advanced.bat) - Conversor legado
 
 ### Executar Script Python
 
@@ -163,6 +184,7 @@ run_adblock.bat          # Requer Python instalado
 ```
 
 **Links dos arquivos:**
+
 - [`run_adblock.bat`](run_adblock.bat) - Executor do script Python
 - [`requirements.txt`](requirements.txt) - Dependências Python
 
@@ -186,12 +208,14 @@ run_adblock.bat          # Requer Python instalado
 Este projeto está licenciado sob a [MIT License](LICENSE) - veja o arquivo LICENSE para detalhes.
 
 **Isso significa que você pode:**
+
 - ✅ Usar comercialmente
 - ✅ Modificar o código
 - ✅ Distribuir
 - ✅ Usar de forma privada
 
 **Apenas mantenha:**
+
 - 📄 Copyright e notice da licença
 - ⚠️ Disclaimer de garantia
 
@@ -199,7 +223,7 @@ Este projeto está licenciado sob a [MIT License](LICENSE) - veja o arquivo LICE
 
 Contribuições são bem-vindas! Sinta-se à vontade para:
 
-- 🐛 Reportar bugs via [Issues](https://github.com/chmulato/ad_block_py/issues)
+- 🐛 Reportar bugs via [Issues]([https://github.com/chmulato/ad_block_py/issues])
 - 💡 Sugerir melhorias
 - 🔧 Enviar Pull Requests
 - ⭐ Dar uma estrela no projeto
