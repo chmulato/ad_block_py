@@ -12,7 +12,7 @@
 
 ### Release Inicial
 
-**Primeira versão estável do Bloqueador de Propagandas para Windows**
+## **Primeira versão estável do Bloqueador de Propagandas para Windows**
 
 ### Novas Funcionalidades
 
